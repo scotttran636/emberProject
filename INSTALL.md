@@ -17,9 +17,3 @@ Using either the git command line or github programs.
 To install:
 
 > npm install
-
-## Run the website on Ember
-
-To run the server:
-
-> ember serve
