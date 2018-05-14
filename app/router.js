@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('home');
   this.route('register');
   this.route('productpage');
+  this.route('creditcard');
 });
 
 export default Router;
