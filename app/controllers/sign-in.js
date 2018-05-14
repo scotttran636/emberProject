@@ -10,22 +10,21 @@ export default Ember.Controller.extend({
   isDisabled: not('isValid'),
 
   actions: {
-    firebase: Ember.inject.service(),
-  actions: {
-  //   signIn(provider) {
-  //     let controller = this;
-  //     this.get('session').open('firebase', {
-  //       provider: provider,
-  //       email: this.get('email') || '',
-  //       password: this.get('password') || '',
-  //     }).then(() => {
-  //       controller.set('email', null);
-  //       controller.set('password', null);
-  //     }, (error) => {
-  //       console.log(error);
-  //     });
-  //   }
-  // }
+
+    signIn(provider) {
+      let controller = this;
+      this.get('session').open('firebase', {
+        provider: provider,
+        email: this.get('email') || '',
+        password: this.get('password') || '',
+      }).then(() => {
+        controller.set('email', null);
+        controller.set('password', null);
+      }, (error) => {
+        console.log(error);
+      });
+    }
+  }
   //   session: Ember.inject.service(),
   // beforeModel: function() {
   //   return this.get('session').fetch().catch(function() {});
@@ -50,18 +49,18 @@ export default Ember.Controller.extend({
 //   this.transitionToRoute('protected');
 // },
 // },
-        signIn: function() {
-            this.get('session').authenticate('authenticator:firebase', {
-                'email': this.get('email'),
-                'password': this.get('password')
-            }).then(function() {
-                this.transitionToRoute('index');
-            }.bind(this));
-        },
-        logout: function() {
-            this.get('session').invalidate().then(function() {
-                this.transitionToRoute('index');
-            }.bind(this));
-        }
-    }
+    //     signIn: function() {
+    //         this.get('session').authenticate('authenticator:firebase', {
+    //             'email': this.get('email'),
+    //             'password': this.get('password')
+    //         }).then(function() {
+    //             this.transitionToRoute('index');
+    //         }.bind(this));
+    //     },
+    //     logout: function() {
+    //         this.get('session').invalidate().then(function() {
+    //             this.transitionToRoute('index');
+    //         }.bind(this));
+    //     }
+    // }
 });
