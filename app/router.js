@@ -11,10 +11,12 @@ Router.map(function() {
   this.route('cart');
   this.route('checkout');
   this.route('thankyou');
-  this.route('home');
   this.route('register');
   this.route('productpage');
   this.route('creditcard');
+  this.route('sign-in');
+  this.route('sign-up');
+  this.route('contact');
 });
 
 export default Router;

@@ -1,0 +1,57 @@
+<!-- <div class='page-header'>
+    <h1>Sign In</h1>
+</div>
+{{input
+    type='text'
+    class='form-control'
+    value=email
+    placeholder='email'
+}}
+{{input
+    type='password'
+    class='form-control'
+    value=password
+    placeholder='password'
+}}
+<button class='btn btn-default' {{action 'signIn' 'password'}}> {{fa-icon 'sign-in'}} Sign In </button>
+{{#if session.isWorking}}
+    <button class='btn btn-default' disabled='disabled'>
+        {{fa-icon 'spinner' spin=true}} Signing in...
+    </button>
+{{else}}
+    <button
+        class='btn btn-default'
+        {{action 'signIn' 'password'}}
+    >
+        {{fa-icon 'sign-in'}} Sign In
+    </button>
+{{/if}} -->
+<h1>Sign In</h1>
+
+<div class="jumbotron text-center">
+   <h1>Coming Soon</h1>
+
+   <br/><br/>
+
+   <p>Don't miss our launch date, sign in now.</p>
+
+   <div class="row">
+    <div class="col-md-6">
+    <div class="form-group">
+      <label for="email-input">Email address</label>
+      {{input type="text" class="form-control" id="email-input" value=email placeholder="Email"}}
+    </div>
+    <div class="form-group">
+      <label for="password-input">Password</label>
+      {{input type="password" class="form-control" id="password-input" value=password placeholder="Password"}}
+    </div>
+    <button class="btn btn-primary btn-lg btn-block" {{action 'signIn'}} disabled={{isDisabled}}>Log In</button>
+      <div class="form-group">
+        {{#if responseMessage}}
+          <div class="alert alert-success">{{responseMessage}}</div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+</div>

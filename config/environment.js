@@ -4,15 +4,23 @@ module.exports = function(environment) {
   let ENV = {
 
     // Firebase database
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: "https://emberproj-4664d.firebaseio.com",
     firebase: {
-      apikey: 'AIzaSyD9Khq7sSLjXJjzC9HbZfib_neKUkWHWIA',
-      authDomain: 'emberproj-4664d.firebaseapp.com',
-      databaseURL: 'https://emberproj-4664d.firebaseio.com',
-      storageBucket: 'emberproj-4664d.appspot.com',
+      apiKey: "AIzaSyD9Khq7sSLjXJjzC9HbZfib_neKUkWHWIA",
+      authDomain: "emberproj-4664d.firebaseapp.com",
+      databaseURL: "https://emberproj-4664d.firebaseio.com",
+      projectId: "emberproj-4664d",
+      storageBucket: "emberproj-4664d.appspot.com",
+      messagingSenderId: "959873026852"
+    },
+
+    torii: {
+      sessionServiceName: 'session'
     },
 
     modulePrefix: 'proj2',
-    environment,
+    environment:environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
